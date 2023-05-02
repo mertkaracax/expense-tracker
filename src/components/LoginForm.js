@@ -13,6 +13,7 @@ const LoginForm = (props) => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
     console.log(`Username: ${username}, Password: ${password}`);
+    navigate("/Homepage");
   };
 
   return (

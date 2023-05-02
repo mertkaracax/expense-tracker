@@ -1,0 +1,83 @@
+.form {
+  box-sizing: border-box;
+  height: 70vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-10vh);
+  justify-content: center;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: toRight 0.7s ease-in forwards;
+}
+
+.heading {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1vh;
+}
+
+.subHeading {
+  margin-bottom: 2vh;
+}
+
+.input {
+  border: 1px solid gray;
+  text-align: center;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #ece4e06e;
+}
+
+.button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fe8660; /*1da1f2*/
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 0.5rem;
+}
+
+.button:hover {
+  background-color: #fe8560c0; /*0c8de4*/
+}
+
+.link {
+  cursor: pointer;
+  color: #fe8660;
+  font-weight: 600;
+  transition: 500ms;
+}
+
+.link:hover {
+  color: #e83c08;
+}
+
+@keyframes toRight {
+  0% {
+    transform: translateX(-10vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+}

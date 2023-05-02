@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import classes from "./LoginForm.module.css";
+import classes from "./SignUpForm.module.css";
 import { useNavigate } from "react-router-dom";
 
 const SignUpForm = (props) => {
