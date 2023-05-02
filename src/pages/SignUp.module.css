@@ -1,0 +1,33 @@
+.login {
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+}
+
+.leftSide {
+  box-sizing: border-box;
+  width: 50vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightSide {
+  box-sizing: border-box;
+  background-color: #f8f2f0;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  background-color: #fe8660;
+  --aleyna: 30vh;
+  width: calc(var(--aleyna));
+  height: calc(var(--aleyna));
+  border-radius: 50%;
+}
