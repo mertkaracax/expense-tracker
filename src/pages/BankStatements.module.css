@@ -1,0 +1,50 @@
+.homepage {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100vw;
+}
+
+.title {
+  font-size: 3vh;
+  font-weight: 500;
+}
+
+.tableContainer {
+  margin-top: 10vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  align-items: center;
+  position: relative;
+}
+
+.addBankStatement {
+  cursor: pointer;
+  margin-left: 50vw;
+  font-weight: 500;
+  margin-bottom: 2vh;
+  color: #e7511e;
+}
+
+.tableItem {
+  box-sizing: border-box;
+  width: 50vw;
+  height: 6vh;
+  padding: 20px;
+  border-radius: 0.5vh;
+  background-color: #9375e7;
+  margin-bottom: 2vh;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  transition: 1000ms;
+}
+
+.tableItem:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}

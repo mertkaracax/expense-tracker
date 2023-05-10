@@ -1,0 +1,107 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 20vh;
+  height: 40vh;
+  background-color: #e2d8d2;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+@media (max-width: 1000px) {
+  .modal {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 1300px) {
+  .modal {
+    width: 80vw;
+  }
+}
+
+.modalHeader {
+  width: 100%;
+  background: #9375e7;
+  height: 15%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalHeaderText {
+  font-size: 20px;
+  color: rgb(243, 243, 243);
+}
+
+.modalHeaderButton {
+  position: absolute;
+  right: 2%;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.modalHeaderButton:hover {
+  scale: 1.03;
+}
+
+.modalContent {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  font-size: 17px;
+  color: rgb(43, 43, 43);
+}
+
+.formItem {
+  box-sizing: border-box;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 0.5vh;
+  width: 100%;
+  display: flex;
+}
+
+.icon {
+  margin-right: 1vw;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 40rem;
+    margin: auto;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

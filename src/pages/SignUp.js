@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./SignUp.module.css";
-import SignUpForm from "../components/SignUpForm";
+import SignUpForm from "../components/Forms/SignUpForm";
 
 const SignUp = (props) => {
   return (
