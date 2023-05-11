@@ -1,4 +1,4 @@
-import classes from "./AddBankForm.module.css";
+import classes from "./AddCredit.module.css";
 import { Fragment } from "react";
 import { GrAddCircle } from "react-icons/gr";
 import { FaTimes } from "react-icons/fa";

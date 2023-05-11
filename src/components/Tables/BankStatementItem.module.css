@@ -15,7 +15,7 @@
   font-size: 18px;
   border-top-left-radius: 0.5vh;
   border-top-right-radius: 0.5vh;
-  background-color: #f4a006e1;
+  background-color: #9375e7;
   align-items: center;
   color: white;
   font-weight: 500;
@@ -30,14 +30,14 @@
   width: 100%;
   transform: translateY(-2vh);
   animation: slide-down 0.4s ease-in forwards;
-  border: 1px solid #f4a006e1;
+  border: 1px solid #9375e7;
   flex-direction: column;
   border-bottom-left-radius: 1vh;
   border-bottom-right-radius: 1vh;
 }
 
 .tableHeader:hover {
-  background-color: #e39504;
+  background-color: #7057b4;
 }
 
 .table .tr:nth-child(even) {

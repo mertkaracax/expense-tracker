@@ -57,7 +57,7 @@ const Homepage = (props) => {
             })}
           </div>
           <h3>Borrowers</h3>
-          <div className={classes.rightTable2}>Debts is not found</div>
+          <div className={classes.rightTable2}>Debts</div>
         </div>
       </div>
     </div>

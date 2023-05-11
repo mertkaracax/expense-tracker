@@ -1,6 +1,8 @@
 .homepage {
   display: flex;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
@@ -9,29 +11,33 @@
 }
 
 .tableContainer {
+  opacity: 0;
   margin-top: 15vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 85vw;
   align-items: center;
   position: relative;
+  transform: translateY(-2vh);
+  animation: opacityUp 0.4s ease-in forwards;
 }
 
 .addBankStatement {
   cursor: pointer;
-  margin-left: 40vw;
+  margin-left: 50vw;
+  font-weight: 500;
   margin-bottom: 2vh;
   color: #e7511e;
 }
 
 .tableItem {
   box-sizing: border-box;
-  width: 50vw;
+  width: 58vw;
   height: 6vh;
   padding: 30px;
   border-radius: 0.5vh;
-  background-color: #f4a006e1;
+  background-color: #9375e7;
   font-size: 18px;
   margin-bottom: 2vh;
   align-items: center;
@@ -49,4 +55,16 @@
 .tableItem:hover {
   opacity: 0.7;
   cursor: pointer;
+}
+
+@keyframes opacityUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-2vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
 }

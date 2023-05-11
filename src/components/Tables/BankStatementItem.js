@@ -53,10 +53,9 @@ const BankStatementItem = (props) => {
           } else if (!tableOpen) setTableOpen(true);
         }}
       >
-        <span>555 555 55 55</span>
-        <span>
-          X Bank May {tableOpen ? <AiFillCaretUp /> : <AiFillCaretDown />}
-        </span>
+        {/* <span>555 555 55 55</span> */}
+        <span>{props.bankAndDate}</span>
+        {tableOpen ? <AiFillCaretUp /> : <AiFillCaretDown />}
       </div>
       <table
         style={{ display: tableOpen ? "flex" : "none" }}

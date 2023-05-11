@@ -8,12 +8,12 @@
   width: 40vw;
   display: flex;
   flex-direction: column;
-  transform: translateX(-10vh);
+  transform: translateX(-2vh);
   /* justify-content: center; */
   padding: 3vh;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.088);
-  animation: toBottom 0.7s ease-in forwards;
+  animation: toBottom 0.5s ease-in forwards;
 }
 
 .tableContainer {
@@ -59,7 +59,7 @@
   padding: 15px;
   border: none;
   border-radius: 5px;
-  background-color: #fe8660; /*1da1f2*/
+  background-color: #9375e7; /*1da1f2*/
   color: #fff;
   font-size: 1.2rem;
   font-weight: normal;
@@ -69,7 +69,7 @@
 }
 
 .button:hover {
-  background-color: #f04c1a; /*0c8de4*/
+  background-color: #8569d0; /*0c8de4*/
 }
 
 .button2 {
@@ -106,12 +106,12 @@
 
 @keyframes toBottom {
   0% {
-    transform: translateY(-10vw);
+    transform: translateY(-2vh);
     opacity: 0;
   }
 
   100% {
-    transform: translateX(0vw);
+    transform: translateX(0vh);
     opacity: 1;
   }
 }

@@ -30,10 +30,10 @@ const BankStatements = (props) => {
         >
           Add Bank Statement
         </span>
-        <BankStatementItem />
-        <BankStatementItem />
-        <BankStatementItem />
-        <BankStatementItem />
+        <BankStatementItem bankAndDate="X Bank - June" />
+        <BankStatementItem bankAndDate="X Bank - May" />
+        <BankStatementItem bankAndDate="Y Bank - April" />
+        <BankStatementItem bankAndDate="Z Bank - March" />
       </div>
     </div>
   );

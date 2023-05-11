@@ -45,8 +45,9 @@
 }
 
 .logout {
-  color: #9510e87e;
+  color: #9510e8b1;
   font-size: 3vh;
+  font-weight: 500;
   margin-top: 40vh;
   bottom: 4vh;
   text-decoration: none;
