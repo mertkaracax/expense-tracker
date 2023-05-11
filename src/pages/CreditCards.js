@@ -10,7 +10,7 @@ const CreditCards = (props) => {
   };
   return (
     <div className={classes.homepage}>
-      {modalOpen && <AddCredit onClose={closeModal} />}
+      {modalOpen && <AddCredit onClose={closeModal} title="Add Credit Card" />}
       <SideBar onPage="CreditCards" />
       <div className={classes.tableContainer}>
         <h4 className={classes.title}>Credit Cards</h4>
