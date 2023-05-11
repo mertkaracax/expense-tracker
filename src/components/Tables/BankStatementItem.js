@@ -1,43 +1,43 @@
 import React, { useState } from "react";
 import classes from "./BankStatementItem.module.css";
 import { MdDone, MdClear } from "react-icons/md";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillCaretDown, AiFillCaretUp, AiFillEdit } from "react-icons/ai";
 
 const MayBankStatements = [
   {
-    date: "17 may",
+    date: "17 - May",
     num: 6453,
-    name: "coffee",
-    percentage: "88%",
+    name: "Coffee",
+    percentage: "100%",
     amount: "120 TL",
   },
   {
-    date: "17 may",
+    date: "16 - May",
     num: 6453,
-    name: "coffee",
-    percentage: "88%",
+    name: "Coffee",
+    percentage: "100%",
     amount: "120 TL",
   },
   {
-    date: "17 may",
+    date: "16 - May",
     num: 6453,
-    name: "coffee",
-    percentage: "88%",
-    amount: "120 TL",
+    name: "Food",
+    percentage: "100%",
+    amount: "200 TL",
   },
   {
-    date: "17 may",
+    date: "15 - May",
     num: 6453,
-    name: "coffee",
-    percentage: "88%",
-    amount: "120 TL",
+    name: "Insurance",
+    percentage: "100%",
+    amount: "100 TL",
   },
   {
-    date: "17 may",
+    date: "15 - May",
     num: 6453,
-    name: "coffee",
-    percentage: "88%",
-    amount: "120 TL",
+    name: "Housing",
+    percentage: "100%",
+    amount: "200 TL",
   },
 ];
 
@@ -54,7 +54,9 @@ const BankStatementItem = (props) => {
         }}
       >
         <span>555 555 55 55</span>
-        <span>X Bank May</span>
+        <span>
+          X Bank May {tableOpen ? <AiFillCaretUp /> : <AiFillCaretDown />}
+        </span>
       </div>
       <table
         style={{ display: tableOpen ? "flex" : "none" }}

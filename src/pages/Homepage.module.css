@@ -9,6 +9,8 @@
   flex-direction: row;
   width: 85vw;
   position: relative;
+  opacity: 0;
+  animation: opacityUp 500ms ease-in forwards;
 }
 
 .leftContainer {
@@ -31,7 +33,7 @@
   padding-right: 2vw;
   padding-top: 2vh; */
   height: 80vh;
-  margin-top: 2vh;
+  margin-top: 1vh;
   width: 100%;
   border: 2px solid orange;
 }
@@ -48,7 +50,7 @@
 .rightSpan {
   width: 50%;
   text-align: center;
-  background-color: rgba(255, 166, 0, 0.573);
+  background-color: #ffa60092;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,9 +86,19 @@
 }
 .rightTable2 {
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40vh;
   margin-top: 1vh;
   width: 100%;
   border: 2px solid orange;
-  border-radius: 1vw;
+}
+@keyframes opacityUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

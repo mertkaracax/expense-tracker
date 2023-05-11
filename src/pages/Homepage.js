@@ -4,20 +4,23 @@ import SideBar from "../components/General/SideBar";
 
 const lastMonthSpendings = [
   { name: "Market", amount: "2500₺  [%31,25]" },
-  { name: "Market", amount: "2500₺  [%31,25]" },
-  { name: "Market", amount: "2500₺  [%31,25]" },
-  { name: "Market", amount: "2500₺  [%31,25]" },
-  { name: "Market", amount: "2500₺  [%31,25]" },
-  { name: "Market", amount: "2500₺  [%31,25]" },
-  { name: "Market", amount: "2500₺  [%31,25]" },
+  { name: "Transportation", amount: "1500₺  [%18,75]" },
+  { name: "Coffee", amount: "1500₺  [%18,75]" },
+  { name: "Food", amount: "1000₺  [%12,25]" },
+  { name: "Housing", amount: "500₺  [%6,25]" },
+  { name: "Medical", amount: "400₺  [%5]" },
+  { name: "Debt Payments", amount: "200₺  [%2,5]" },
+  { name: "Personal Spending", amount: "200₺  [%2,5]" },
+  { name: "Utilities", amount: "100₺  [%1,25]" },
+  { name: "Insurance", amount: "100₺  [%1,25]" },
 ];
 
 const monthlySpendings = [
-  { month: "January", amount: "8000 TL" },
-  { month: "January", amount: "8000 TL" },
-  { month: "January", amount: "8000 TL" },
-  { month: "January", amount: "8000 TL" },
-  { month: "January", amount: "8000 TL" },
+  { month: "May", amount: "8000 TL" },
+  { month: "April", amount: "7600 TL" },
+  { month: "February", amount: "9000 TL" },
+  { month: "January", amount: "11000 TL" },
+  { month: "December", amount: "500TL" },
 ];
 const Homepage = (props) => {
   return (
@@ -54,7 +57,7 @@ const Homepage = (props) => {
             })}
           </div>
           <h3>Borrowers</h3>
-          <div className={classes.rightTable2}>Debt is not found</div>
+          <div className={classes.rightTable2}>Debts is not found</div>
         </div>
       </div>
     </div>

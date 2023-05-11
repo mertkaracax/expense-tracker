@@ -12,9 +12,10 @@
   box-sizing: border-box;
   height: 6vh;
   padding: 20px;
+  font-size: 18px;
   border-top-left-radius: 0.5vh;
   border-top-right-radius: 0.5vh;
-  background-color: #9375e7;
+  background-color: #f4a006e1;
   align-items: center;
   color: white;
   font-weight: 500;
@@ -29,14 +30,14 @@
   width: 100%;
   transform: translateY(-2vh);
   animation: slide-down 0.4s ease-in forwards;
-  border: 1px solid #9375e7;
+  border: 1px solid #f4a006e1;
   flex-direction: column;
   border-bottom-left-radius: 1vh;
   border-bottom-right-radius: 1vh;
 }
 
 .tableHeader:hover {
-  background-color: #9375e7de;
+  background-color: #e39504;
 }
 
 .table .tr:nth-child(even) {
