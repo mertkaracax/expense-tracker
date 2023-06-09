@@ -32,15 +32,15 @@
   /* padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 2vh; */
-  height: 80vh;
+  height: 40vh;
   margin-top: 1vh;
   width: 100%;
-  border: 2px solid orange;
+  border: 3px solid #307dd545;
 }
 
 .leftSpan {
   width: 50%;
-  background-color: rgba(255, 166, 0, 0.219);
+  background-color: white;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -50,7 +50,7 @@
 .rightSpan {
   width: 50%;
   text-align: center;
-  background-color: #ffa60092;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +82,7 @@
   height: 40vh;
   margin-top: 1vh;
   width: 100%;
-  border: 2px solid orange;
+  border: 3px solid #307dd545;
 }
 .rightTable2 {
   box-sizing: border-box;
@@ -92,7 +92,7 @@
   height: 40vh;
   margin-top: 1vh;
   width: 100%;
-  border: 2px solid orange;
+  border: 3px solid #307dd545;
 }
 @keyframes opacityUp {
   from {
