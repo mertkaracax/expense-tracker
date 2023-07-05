@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./CreditCards.module.css";
 import SideBar from "../components/General/SideBar";
 import AddCredit from "../components/ModalForms/AddCredit";
@@ -8,6 +8,19 @@ const CreditCards = (props) => {
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  const username = localStorage.getItem("username");
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/get_cards/${username}`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
+
   return (
     <div className={classes.homepage}>
       {modalOpen && <AddCredit onClose={closeModal} title="Add Credit Card" />}

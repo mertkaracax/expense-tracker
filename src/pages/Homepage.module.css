@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: row;
   width: 85vw;
+  height: 100vh;
   position: relative;
   opacity: 0;
   animation: opacityUp 500ms ease-in forwards;
@@ -23,44 +24,71 @@
   display: flex;
   align-items: center;
   padding: 7vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  /* padding-left: 5vw;
+  padding-right: 5vw; */
 }
 
-.leftTable {
+::-webkit-scrollbar {
+  background-color: #f8f2f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aa43ea38;
+  border-radius: 10px;
+}
+
+.leftTable1 {
   box-sizing: border-box;
-  /* padding-left: 2vw;
-  padding-right: 2vw;
-  padding-top: 2vh; */
-  height: 40vh;
+  height: 35vh;
+  overflow-y: scroll;
   margin-top: 1vh;
   width: 100%;
-  border: 3px solid #307dd545;
+  /* border: 3px solid #f8f2f0; */
+  border-radius: 10px;
 }
-
-.leftSpan {
-  width: 50%;
-  background-color: white;
-  text-align: center;
+.leftTable2 {
   display: flex;
-  justify-content: center;
   align-items: center;
-}
+  justify-content: center;
 
-.rightSpan {
-  width: 50%;
-  text-align: center;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 40vh;
+  /* width: 70%; */
+  margin-top: 5vh;
 }
 
 .item {
+  background-color: #f8f2f0;
+  box-sizing: border-box;
   display: flex;
+  border-radius: 5px;
   justify-content: space-between;
-  height: 5vh;
-  border-bottom: 1px solid rgba(131, 128, 126, 0.292);
+  align-items: center;
+  /* height: 7vh; */
+  margin-bottom: 0.5vh;
+  /* border: 1px solid #83807e4a; */
+}
+
+.leftSpan {
+  box-sizing: border-box;
+  width: 50%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  color: purple;
+}
+
+.rightSpan {
+  box-sizing: border-box;
+  height: 7vh;
+  width: 50%;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid white;
 }
 
 .rightContainer {
@@ -73,16 +101,18 @@
   display: flex;
   align-items: center;
   padding: 7vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  /* padding-left: 5vw;
+  padding-right: 5vw; */
 }
 
 .rightTable1 {
   box-sizing: border-box;
-  height: 40vh;
+  height: 35vh;
+  overflow-y: scroll;
   margin-top: 1vh;
   width: 100%;
-  border: 3px solid #307dd545;
+  /* border: 3px solid #307dd545; */
+  border-radius: 10px;
 }
 .rightTable2 {
   box-sizing: border-box;
@@ -90,9 +120,8 @@
   align-items: center;
   justify-content: center;
   height: 40vh;
-  margin-top: 1vh;
+  margin-top: 5vh;
   width: 100%;
-  border: 3px solid #307dd545;
 }
 @keyframes opacityUp {
   from {

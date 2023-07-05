@@ -2,8 +2,40 @@ import classes from "./AddCredit.module.css";
 import { Fragment } from "react";
 import { GrAddCircle } from "react-icons/gr";
 import { FaTimes } from "react-icons/fa";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddCredit = (props) => {
+  const navigate = useNavigate();
+  const cardRef = useRef();
+  const bankRef = useRef();
+  const nameRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const cardNumber = cardRef.current.value;
+    const bankName = bankRef.current.value;
+    const name = nameRef.current.value;
+
+    fetch("http://localhost:8080/card/add_card", {
+      method: "POST",
+      body: JSON.stringify({
+        username: localStorage.getItem("username"),
+        cardNumber: cardNumber,
+        bankName: bankName,
+        name: name,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          navigate("/Homepage");
+        } else {
+          props.openModal();
+        }
+      });
+  };
+
   return (
     <Fragment>
       <div className={classes.backdrop} onClick={props.onClose}></div>
@@ -18,26 +50,31 @@ const AddCredit = (props) => {
           />
         </div>
         <div className={classes.modalContent}>
-          <div className={classes.formItem}>
-            <GrAddCircle color="red" size={20} className={classes.icon} /> Add
-            All
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} /> 5944 5495 4955
-            34344 - Z Bank
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} />
-            5944 5495 4955 34344 - Z Bank
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} />
-            5944 5495 4955 34344 - Z Bank
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} />
-            5944 5495 4955 34344 - Z Bank
-          </div>
+          <form className={classes.form}>
+            <input
+              type="text"
+              className={classes.inp}
+              placeholder="Credit Card"
+              ref={cardRef}
+            />
+            <input
+              type="text"
+              className={classes.inp}
+              placeholder="Name"
+              ref={nameRef}
+            />
+            <input
+              type="text"
+              className={classes.inp}
+              placeholder="Bank Name"
+              ref={bankRef}
+            />
+            <input
+              type="submit"
+              className={classes.btn}
+              placeholder="Add Card"
+            ></input>
+          </form>
         </div>
       </div>
     </Fragment>

@@ -12,12 +12,19 @@ const LoginForm = (props) => {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
-    console.log(`Username: ${username}, Password: ${password}`);
-    if (username === "test" && password === "1") {
-      navigate("/Homepage");
-    } else {
-      props.openModal();
-    }
+    fetch("http://localhost:8080/user/login", {
+      method: "POST",
+      body: JSON.stringify({ username: username, password: password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          localStorage.setItem("username", username);
+          navigate("/Homepage");
+        } else {
+          props.openModal();
+        }
+      });
   };
 
   return (

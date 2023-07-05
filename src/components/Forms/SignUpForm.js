@@ -12,7 +12,24 @@ const SignUpForm = (props) => {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
-    console.log(`Username: ${username}, Password: ${password}`);
+    const email = emailRef.current.value;
+
+    fetch("http://localhost:8080/user/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        username: username,
+        password: password,
+        email: email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          navigate("/Homepage");
+        } else {
+          props.openModal();
+        }
+      });
   };
 
   return (

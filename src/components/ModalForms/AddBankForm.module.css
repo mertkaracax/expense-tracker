@@ -88,6 +88,38 @@
   transform: scale(1.1);
 }
 
+.label {
+  margin: auto;
+  height: 20vh;
+  width: 40vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.img {
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+  transition: 500ms;
+}
+
+.img:hover {
+  transform: scale(1.06);
+  background-color: #e996627b;
+}
+.imgInput {
+  background-color: #e99562;
+  color: white;
+}
+input[type="file"] {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .modal {
     width: 40rem;
