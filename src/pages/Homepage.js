@@ -36,7 +36,7 @@ const Homepage = (props) => {
       {
         label: "# of Votes",
         data: lastMonthSpendings.map((item) => {
-          return item.int;
+          return item.amount;
         }),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
@@ -75,7 +75,7 @@ const Homepage = (props) => {
       {
         label: "Spend amount",
         data: monthlySpendings.map((item) => {
-          return item.int;
+          return item.amount;
         }),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
