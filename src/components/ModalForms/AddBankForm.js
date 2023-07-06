@@ -16,17 +16,17 @@ const AddBankForm = (props) => {
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    const reader = new FileReader();
+    //const reader = new FileReader();
 
     setFile(file);
-    reader.onload = () => {
+   /* reader.onload = () => {
       setFile(reader.result);
     };
 
     if (file) {
       reader.readAsDataURL(file);
-      setFile(reader.result);
-    }
+    }*/
+
   };
 
   const submitHandler = (e) => {
@@ -34,10 +34,11 @@ const AddBankForm = (props) => {
     const imgData = new FormData();
     imgData.append("file", file);
     imgData.append("username", localStorage.getItem("username"));
-    imgData.append("bankName", card);
-    fetch(`http://localhost:8080/statement/upload/`, {
+    imgData.append("bankname", card);
+    fetch(`http://localhost:8080/statement/upload`, {
       method: "POST",
       body: imgData,
+      
     }).then((res) => {
       props.onClose();
       return res.json();
