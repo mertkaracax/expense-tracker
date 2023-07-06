@@ -16,7 +16,7 @@ const SignUpForm = (props) => {
 
     fetch("http://localhost:8080/user/signup", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

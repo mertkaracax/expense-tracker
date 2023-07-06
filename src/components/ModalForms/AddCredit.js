@@ -16,24 +16,21 @@ const AddCredit = (props) => {
     const cardNumber = cardRef.current.value;
     const bankName = bankRef.current.value;
     const name = nameRef.current.value;
+    const username = localStorage.getItem("username");
 
     fetch("http://localhost:8080/card/add_card", {
       method: "POST",
       body: JSON.stringify({
-        username: localStorage.getItem("username"),
+        username: username,
         cardNumber: cardNumber,
         bankName: bankName,
         name: name,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          navigate("/Homepage");
-        } else {
-          props.openModal();
-        }
-      });
+      .then((res) => props.onClose())
   };
 
   return (
@@ -50,7 +47,7 @@ const AddCredit = (props) => {
           />
         </div>
         <div className={classes.modalContent}>
-          <form className={classes.form}>
+          <form className={classes.form} onSubmit={handleSubmit}>
             <input
               type="text"
               className={classes.inp}
