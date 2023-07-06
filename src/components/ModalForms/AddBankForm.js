@@ -4,9 +4,15 @@ import { GrAddCircle } from "react-icons/gr";
 import { FaTimes } from "react-icons/fa";
 import foto from "../../assets/concer.png";
 import { useState } from "react";
+import Dropdown from "./Dropdown";
 
 const AddBankForm = (props) => {
   const [file, setFile] = useState();
+  const [card, setCard] = useState();
+
+  const chooseCardHandler = (item) => {
+    setCard(item.bankName);
+  };
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -49,6 +55,7 @@ const AddBankForm = (props) => {
           />
         </div>
         <div className={classes.modalContent}>
+          <Dropdown onSubmit={chooseCardHandler} />
           <label htmlFor="file-input" className={classes.label}>
             <div
               style={{
@@ -73,7 +80,12 @@ const AddBankForm = (props) => {
               // onChange={handleFotoYukleme}
             />
           </label>
-          <button onClick={submitHandler}></button>
+          <button
+            style={{ width: "15vw", height: "10vh" }}
+            onClick={submitHandler}
+          >
+            Save
+          </button>
         </div>
       </div>
     </Fragment>
