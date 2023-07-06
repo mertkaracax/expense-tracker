@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 const Dropdown = (props) => {
   const [open, setOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const username = localStorage.getItem("username");
 
   useEffect(() => {
-    fetch("http://localhost:8080/card/get_cards")
+    fetch(`http://localhost:8080/card/get_cards/${username}`)
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
