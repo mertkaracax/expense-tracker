@@ -84,7 +84,7 @@ const AddBankForm = (props) => {
             />
           </label>
           <button
-            style={{ width: "15vw", height: "10vh" }}
+            style={{ width: "15vw", height: "5vh" }}
             onClick={submitHandler}
           >
             Save
