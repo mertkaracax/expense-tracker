@@ -36,6 +36,7 @@ const Dropdown = (props) => {
           return (
             <div
               onClick={() => {
+                setOpen(false);
                 props.onSubmit(item);
               }}
               className={styles.dropdownItem}

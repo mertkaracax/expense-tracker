@@ -19,7 +19,9 @@
 }
 
 .dropdownItem {
-  height: 3vh;
-  width: 100%;
+  background-color: white;
+  color: black;
+  height: 4vh;
+  width: 15vw;
   border: 1px solid gray;
 }

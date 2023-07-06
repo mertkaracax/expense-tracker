@@ -16,17 +16,7 @@ const AddBankForm = (props) => {
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    //const reader = new FileReader();
-
     setFile(file);
-   /* reader.onload = () => {
-      setFile(reader.result);
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }*/
-
   };
 
   const submitHandler = (e) => {
@@ -38,7 +28,6 @@ const AddBankForm = (props) => {
     fetch(`http://localhost:8080/statement/upload`, {
       method: "POST",
       body: imgData,
-      
     }).then((res) => {
       props.onClose();
       return res.json();
