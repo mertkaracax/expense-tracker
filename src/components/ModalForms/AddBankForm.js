@@ -32,6 +32,8 @@ const AddBankForm = (props) => {
     e.preventDefault();
     const imgData = new FormData();
     imgData.append("file", file);
+    imgData.append("username", localStorage.getItem("username"));
+    imgData.append("bankName", card);
     fetch(`http://localhost:8080/statement/upload/`, {
       method: "POST",
       body: imgData,
