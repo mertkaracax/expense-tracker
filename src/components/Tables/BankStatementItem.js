@@ -78,7 +78,6 @@ const BankStatementItem = (props) => {
         {monthlyStatements.map((item) => {
           return (
             <tr className={classes.tr}>
-              <td className={classes.td}>{item.id}</td>
               <td className={classes.td}>{item.date}</td>
               <td className={classes.td}>{item.category}</td>
               <td className={classes.td}>{item.amount}</td>
