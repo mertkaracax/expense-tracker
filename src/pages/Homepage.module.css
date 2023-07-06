@@ -43,7 +43,7 @@
   overflow-y: scroll;
   margin-top: 1vh;
   width: 100%;
-  /* border: 3px solid #f8f2f0; */
+  border: 3px solid #f8f2f0; 
   border-radius: 10px;
 }
 .leftTable2 {
@@ -111,7 +111,7 @@
   overflow-y: scroll;
   margin-top: 1vh;
   width: 100%;
-  /* border: 3px solid #307dd545; */
+  border: 3px solid #f8f2f0; 
   border-radius: 10px;
 }
 .rightTable2 {
