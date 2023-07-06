@@ -20,6 +20,9 @@
 
 .dropdownItem {
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: black;
   height: 4vh;
   width: 15vw;
