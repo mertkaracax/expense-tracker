@@ -126,12 +126,6 @@ const Homepage = (props) => {
           </div>
           <div className={classes.leftTable2}>
             <Pie
-              options={{
-                ...options,
-                legend: {
-                  display: false,
-                },
-              }}
               data={pieData}
             />
           </div>
