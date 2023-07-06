@@ -5,95 +5,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import { Bar } from "react-chartjs-2";
 import { CategoryScale, LinearScale, BarElement, Title } from "chart.js";
-
-const lastMonthSpendings = [
-  { name: "Market", amount: "2500₺  [%31,25]", int: 25 },
-  { name: "Transportation", amount: "1500₺  [%18,75]", int: 15 },
-  { name: "Coffee", amount: "1500₺  [%18,75]", int: 15 },
-  { name: "Food", amount: "1000₺  [%12,25]", int: 10 },
-  { name: "Housing", amount: "500₺  [%6,25]", int: 25 },
-  { name: "Medical", amount: "400₺  [%5]", int: 25 },
-  { name: "Debt Payments", amount: "200₺  [%2,5]", int: 25 },
-  // { name: "Personal Spending", amount: "200₺  [%2,5]" },
-  // { name: "Utilities", amount: "100₺  [%1,25]" },
-  // { name: "Insurance", amount: "100₺  [%1,25]" },
-];
-
-const options = {
-  legend: {
-    display: false,
-  },
-};
-
-const pieData = {
-  labels: lastMonthSpendings.map((item) => {
-    return item.name;
-  }),
-  datasets: [
-    {
-      label: "# of Votes",
-      data: lastMonthSpendings.map((item) => {
-        return item.int;
-      }),
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
-
-const monthlySpendings = [
-  { month: "May", amount: "8000 TL", int: 800 },
-  { month: "April", amount: "7600 TL", int: 323 },
-  { month: "February", amount: "9000 TL", int: 123 },
-  { month: "January", amount: "11000 TL", int: 1231 },
-  { month: "December", amount: "500TL", int: 550 },
-];
-
-const barData = {
-  labels: monthlySpendings.map((item) => {
-    return item.month;
-  }),
-  datasets: [
-    {
-      label: "Spend amount",
-      data: monthlySpendings.map((item) => {
-        return item.int;
-      }),
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
+import { useEffect } from "react";
+import { useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.register(
@@ -105,6 +18,95 @@ ChartJS.register(
   Legend
 );
 const Homepage = (props) => {
+  const username = localStorage.getItem("username");
+  const [lastMonthSpendings, setLastMonthSpendings] = useState([]);
+  const [monthlySpendings, setMonthlySpendings] = useState([]);
+
+  const options = {
+    legend: {
+      display: false,
+    },
+  };
+
+  const pieData = {
+    labels: lastMonthSpendings.map((item) => {
+      return item.name;
+    }),
+    datasets: [
+      {
+        label: "# of Votes",
+        data: lastMonthSpendings.map((item) => {
+          return item.int;
+        }),
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  // const monthlySpendings = [
+  //   { month: "May", amount: "8000 TL", int: 800 },
+  //   { month: "April", amount: "7600 TL", int: 323 },
+  //   { month: "February", amount: "9000 TL", int: 123 },
+  //   { month: "January", amount: "11000 TL", int: 1231 },
+  //   { month: "December", amount: "500TL", int: 550 },
+  // ];
+
+  const barData = {
+    labels: monthlySpendings.map((item) => {
+      return item.month;
+    }),
+    datasets: [
+      {
+        label: "Spend amount",
+        data: monthlySpendings.map((item) => {
+          return item.int;
+        }),
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/homepage/${username}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMonthlySpendings(data.monthly);
+        setLastMonthSpendings(data.lastMonthSpendings);
+      });
+  }, []);
+
   return (
     <div className={classes.homepage}>
       <SideBar onPage="Homepage" />
@@ -122,7 +124,7 @@ const Homepage = (props) => {
                     className={classes.rightSpan}
                     style={{ fontSize: 18, color: "gray" }}
                   >
-                    {item.amount}
+                    {item.amount} TL
                   </span>
                 </div>
               );
