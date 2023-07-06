@@ -14,6 +14,9 @@ const LoginForm = (props) => {
     const password = passwordRef.current.value;
     fetch("http://localhost:8080/user/login", {
       method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ username: username, password: password }),
     })
       .then((res) => res.json())

@@ -4,6 +4,7 @@ import SideBar from "../components/General/SideBar";
 import AddCredit from "../components/ModalForms/AddCredit";
 
 const CreditCards = (props) => {
+  const [cards, setCards] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const closeModal = () => {
     setModalOpen(false);
@@ -12,12 +13,13 @@ const CreditCards = (props) => {
   const username = localStorage.getItem("username");
 
   useEffect(() => {
-    fetch(`http://localhost:8080/get_cards/${username}`, {
+    fetch(`http://localhost:8080/card/get_cards/${username}`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setCards(data);
       });
   }, []);
 
@@ -35,38 +37,19 @@ const CreditCards = (props) => {
         >
           Add a Credit Card
         </span>
-        <div className={classes.tableItem}>
-          <div className={classes.leftSide}>
-            <span>555 555 5325 5235</span>
-            <br />
-            <span>Bilgehan Ay</span>
-          </div>
-          <span className={classes.rightSide}>X Bank</span>
-        </div>
-        <div className={classes.tableItem}>
-          <div className={classes.leftSide}>
-            <span>555 555 5325 5235</span>
-            <br />
-            <span>Bilgehan Ay</span>
-          </div>
-          <span className={classes.rightSide}>X Bank</span>
-        </div>
-        <div className={classes.tableItem}>
-          <div className={classes.leftSide}>
-            <span>555 555 5325 5235</span>
-            <br />
-            <span>Bilgehan Ay</span>
-          </div>
-          <span className={classes.rightSide}>X Bank</span>
-        </div>
-        <div className={classes.tableItem}>
-          <div className={classes.leftSide}>
-            <span>555 555 5325 5235</span>
-            <br />
-            <span>Bilgehan Ay</span>
-          </div>
-          <span className={classes.rightSide}>X Bank</span>
-        </div>
+
+        {cards.map((item) => {
+          return (
+            <div className={classes.tableItem} key={item.id}>
+              <div className={classes.leftSide}>
+                <span>{item.cardNumber}</span>
+                <br />
+                <span>{item.name}</span>
+              </div>
+              <span className={classes.rightSide}>{item.bankName}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

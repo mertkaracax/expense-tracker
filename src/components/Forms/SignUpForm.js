@@ -16,20 +16,21 @@ const SignUpForm = (props) => {
 
     fetch("http://localhost:8080/user/signup", {
       method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         username: username,
         password: password,
         email: email,
       }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          navigate("/Homepage");
-        } else {
-          props.openModal();
-        }
-      });
+    }).then((res) => {
+      if (res.status === 500) {
+        navigate("/Homepage");
+      } else {
+        props.openModal();
+      }
+    });
   };
 
   return (

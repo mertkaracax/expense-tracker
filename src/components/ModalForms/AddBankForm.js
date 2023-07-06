@@ -3,8 +3,38 @@ import { Fragment } from "react";
 import { GrAddCircle } from "react-icons/gr";
 import { FaTimes } from "react-icons/fa";
 import foto from "../../assets/concer.png";
+import { useState } from "react";
 
 const AddBankForm = (props) => {
+  const [file, setFile] = useState();
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    setFile(file);
+    reader.onload = () => {
+      setFile(reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const imgData = new FormData();
+    imgData.append("file", file);
+    fetch(`http://localhost:8080/statement/upload/`, {
+      method: "POST",
+      body: imgData,
+    }).then((res) => {
+      props.onClose();
+      return res.json();
+    });
+  };
+
   return (
     <Fragment>
       <div className={classes.backdrop} onClick={props.onClose}></div>
@@ -19,26 +49,6 @@ const AddBankForm = (props) => {
           />
         </div>
         <div className={classes.modalContent}>
-          {/* <div className={classes.formItem}>
-            <GrAddCircle color="red" size={20} className={classes.icon} /> Add
-            All
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} /> 5944 5495 4955
-            34344 - Z Bank
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} />
-            5944 5495 4955 34344 - Z Bank
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} />
-            5944 5495 4955 34344 - Z Bank
-          </div>
-          <div className={classes.formItem}>
-            <GrAddCircle size={20} className={classes.icon} />
-            5944 5495 4955 34344 - Z Bank
-          </div> */}
           <label htmlFor="file-input" className={classes.label}>
             <div
               style={{
@@ -63,6 +73,7 @@ const AddBankForm = (props) => {
               // onChange={handleFotoYukleme}
             />
           </label>
+          <button onClick={submitHandler}></button>
         </div>
       </div>
     </Fragment>

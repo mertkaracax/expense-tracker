@@ -25,7 +25,7 @@ const options = {
   },
 };
 
-const data = {
+const pieData = {
   labels: lastMonthSpendings.map((item) => {
     return item.name;
   }),
@@ -64,6 +64,37 @@ const monthlySpendings = [
   { month: "December", amount: "500TL" },
 ];
 
+const barData = {
+  labels: lastMonthSpendings.map((item) => {
+    return item.name;
+  }),
+  datasets: [
+    {
+      label: "# of Votes",
+      data: lastMonthSpendings.map((item) => {
+        return item.int;
+      }),
+      backgroundColor: [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+      ],
+      borderColor: [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.register(
   CategoryScale,
@@ -83,7 +114,7 @@ const Homepage = (props) => {
           <div className={classes.leftTable1}>
             {lastMonthSpendings.map((item) => {
               return (
-                <div className={classes.item}>
+                <div className={classes.item} key={item.name}>
                   <span className={classes.leftSpan} style={{ fontSize: 18 }}>
                     {item.name}
                   </span>
@@ -105,7 +136,7 @@ const Homepage = (props) => {
                   display: false,
                 },
               }}
-              data={data}
+              data={pieData}
             />
           </div>
         </div>
@@ -114,7 +145,7 @@ const Homepage = (props) => {
           <div className={classes.rightTable1}>
             {monthlySpendings.map((item) => {
               return (
-                <div className={classes.item}>
+                <div className={classes.item} key={item.month}>
                   <span className={classes.leftSpan}>{item.month}</span>
                   <span className={classes.rightSpan}>{item.amount}</span>
                 </div>
@@ -123,7 +154,7 @@ const Homepage = (props) => {
           </div>
 
           <div className={classes.rightTable2}>
-            <Bar data={data} />
+            <Bar data={barData} />
           </div>
         </div>
       </div>

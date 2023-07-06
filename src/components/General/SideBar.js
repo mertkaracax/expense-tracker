@@ -6,7 +6,7 @@ const SideBar = (props) => {
   return (
     <div className={classes.sideBar}>
       {/* <AiOutlineRight className={classes.icon} /> */}
-      <h4 className={classes.username}>Bilgehan Ay</h4>
+      <h4 className={classes.username}>{localStorage.getItem("username")}</h4>
       <Link
         to="/Homepage"
         style={{
