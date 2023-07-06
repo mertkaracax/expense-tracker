@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const Dropdown = (props) => {
   const [open, setOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const [bankName, setBankName] = useState();
   const username = localStorage.getItem("username");
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const Dropdown = (props) => {
         className={styles.dropdownButton}
         onClick={handleButtonClick}
       >
-        Choose Card
+        {bankName ? bankName : "Choose Card"}
       </button>
       <div
         style={{ display: open ? "flex" : "none" }}
@@ -37,6 +38,7 @@ const Dropdown = (props) => {
             <div
               onClick={() => {
                 setOpen(false);
+                setBankName(item.bankName);
                 props.onSubmit(item);
               }}
               className={styles.dropdownItem}
