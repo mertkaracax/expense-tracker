@@ -21,7 +21,7 @@ const CreditCards = (props) => {
         console.log(data);
         setCards(data);
       });
-  }, []);
+  }, [modalOpen]);
 
   return (
     <div className={classes.homepage}>

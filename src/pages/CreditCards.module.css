@@ -46,6 +46,18 @@
   display: flex;
   justify-content: space-between;
   transition: 1000ms;
+  animation: down 500ms ease-in forwards;
+}
+
+@keyframes down {
+  from{
+    transform: translateY(-2vh);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .rightSide {
