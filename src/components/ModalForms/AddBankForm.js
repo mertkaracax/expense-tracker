@@ -7,7 +7,7 @@ import { useState } from "react";
 import Dropdown from "./Dropdown";
 
 const AddBankForm = (props) => {
-  const [file, setFile] = useState();
+  const [file, setFile] = useState("null");
   const [card, setCard] = useState();
 
   const chooseCardHandler = (item) => {
@@ -25,6 +25,7 @@ const AddBankForm = (props) => {
 
     if (file) {
       reader.readAsDataURL(file);
+      setFile(reader.result);
     }
   };
 
@@ -61,7 +62,7 @@ const AddBankForm = (props) => {
           <label htmlFor="file-input" className={classes.label}>
             <div
               style={{
-                width: "12vw",
+                width: "15vw",
                 height: "5vh",
                 background: "#f7f7f7",
                 border: "1px solid black",
@@ -71,7 +72,7 @@ const AddBankForm = (props) => {
                 alignItems: "center",
               }}
             >
-              ADD FILE
+              {file === "null" ? "Add File" : "File is added"}
             </div>
             <input
               required
@@ -79,7 +80,7 @@ const AddBankForm = (props) => {
               type="file"
               multiple="false"
               className={classes.imgInput}
-              // onChange={handleFotoYukleme}
+              onChange={handleFileUpload}
             />
           </label>
           <button

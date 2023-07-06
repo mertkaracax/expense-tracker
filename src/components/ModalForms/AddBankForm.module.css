@@ -67,17 +67,6 @@
   color: rgb(43, 43, 43);
 }
 
-.formItem {
-  box-sizing: border-box;
-  padding: 1vh;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  margin-bottom: 0.5vh;
-  width: 100%;
-  display: flex;
-}
-
 .icon {
   margin-right: 1vw;
   cursor: pointer;
@@ -89,11 +78,9 @@
 }
 
 .label {
-  margin: auto;
-  height: 20vh;
-  width: 40vw;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  margin: 2vh;
+  height: 5vh;
+  width: 15vw;
   display: flex;
   align-items: center;
   justify-content: center;
