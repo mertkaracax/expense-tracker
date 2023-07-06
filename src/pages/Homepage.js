@@ -22,22 +22,20 @@ const Homepage = (props) => {
   const [lastMonthSpendings, setLastMonthSpendings] = useState([]);
   const [monthlySpendings, setMonthlySpendings] = useState([]);
 
-  const options = {
-    legend: {
-      display: false,
-    },
-  };
-
   const pieData = {
-    labels: lastMonthSpendings.map((item) => {
-      return item.name;
-    }),
+    labels:
+      lastMonthSpendings &&
+      lastMonthSpendings.map((item) => {
+        return item.name;
+      }),
     datasets: [
       {
         label: "# of Votes",
-        data: lastMonthSpendings.map((item) => {
-          return item.amount;
-        }),
+        data:
+          lastMonthSpendings &&
+          lastMonthSpendings.map((item) => {
+            return item.amount;
+          }),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -59,24 +57,20 @@ const Homepage = (props) => {
     ],
   };
 
-  // const monthlySpendings = [
-  //   { month: "May", amount: "8000 TL", int: 800 },
-  //   { month: "April", amount: "7600 TL", int: 323 },
-  //   { month: "February", amount: "9000 TL", int: 123 },
-  //   { month: "January", amount: "11000 TL", int: 1231 },
-  //   { month: "December", amount: "500TL", int: 550 },
-  // ];
-
   const barData = {
-    labels: monthlySpendings.map((item) => {
-      return item.month;
-    }),
+    labels:
+      monthlySpendings &&
+      monthlySpendings.map((item) => {
+        return item.month;
+      }),
     datasets: [
       {
         label: "Spend amount",
-        data: monthlySpendings.map((item) => {
-          return item.amount;
-        }),
+        data:
+          monthlySpendings &&
+          monthlySpendings.map((item) => {
+            return item.amount;
+          }),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
