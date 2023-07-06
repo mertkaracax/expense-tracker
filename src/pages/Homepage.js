@@ -103,7 +103,7 @@ const Homepage = (props) => {
       .then((res) => res.json())
       .then((data) => {
         setMonthlySpendings(data.monthly);
-        setLastMonthSpendings(data.lastMonthSpendings);
+        setLastMonthSpendings(data.lastMonth);
       });
   }, []);
 
