@@ -48,6 +48,8 @@ const BankStatements = (props) => {
         {statements.map((item) => {
           return (
             <BankStatementItem
+              key={item.id}
+              id={item.id}
               bankAndDate={`${item.bankName} - ${item.month}`}
             />
           );
