@@ -57,21 +57,21 @@ const pieData = {
 };
 
 const monthlySpendings = [
-  { month: "May", amount: "8000 TL" },
-  { month: "April", amount: "7600 TL" },
-  { month: "February", amount: "9000 TL" },
-  { month: "January", amount: "11000 TL" },
-  { month: "December", amount: "500TL" },
+  { month: "May", amount: "8000 TL", int: 800 },
+  { month: "April", amount: "7600 TL", int: 323 },
+  { month: "February", amount: "9000 TL", int: 123 },
+  { month: "January", amount: "11000 TL", int: 1231 },
+  { month: "December", amount: "500TL", int: 550 },
 ];
 
 const barData = {
-  labels: lastMonthSpendings.map((item) => {
-    return item.name;
+  labels: monthlySpendings.map((item) => {
+    return item.month;
   }),
   datasets: [
     {
-      label: "# of Votes",
-      data: lastMonthSpendings.map((item) => {
+      label: "Spend amount",
+      data: monthlySpendings.map((item) => {
         return item.int;
       }),
       backgroundColor: [

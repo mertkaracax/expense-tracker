@@ -10,7 +10,9 @@
   flex-direction: column;
   padding: 2vh;
   padding-top: 5vh;
-  position: relative;
+  position: sticky;
+  left: 0px;
+  top: 0px;
 }
 
 /* .icon {
